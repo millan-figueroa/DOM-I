@@ -1,3 +1,5 @@
+Millan Figueroa
+
 # DOM I - JavaScript Content Management System
 
 ## Project Description
