@@ -12,3 +12,70 @@ body {
 .redDigit {
   color: red;
 }
+
+.start-btn{
+  -webkit-user-select: none; /* Safari */        
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+  line-height: 21px;
+  padding: 13px 55px;
+  font-size: 20px;
+  border-radius: 4px;
+  background-color: #00E676;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  width: 286px;
+  text-align: center;
+}
+
+.start-btn:hover{
+  background-color: #45EC9B;
+}
+
+.start-btn-lock{
+  -webkit-user-select: none; /* Safari */        
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+  line-height: 21px;
+  padding: 13px 55px;
+  font-size: 20px;
+  border-radius: 4px;
+  width: 286px;
+  text-align: center;
+  background-color: #e53935;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.start-btn-lock:hover{
+  background-color: #ef5350;
+}
+
+.lap-cont{
+  width: 286px;
+  margin-top: 20px;
+  border-top: 1px solid lightgray;
+}
+
+.lap{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid lightgray;
+}
+
+.current .the-lap{
+  font-weight: bold;
+}
+
+.current .time{
+  font-weight: bold;
+}
+
+.push-down{
+  position: relative;
+  top: 4px;
+}
