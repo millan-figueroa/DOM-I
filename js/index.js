@@ -37,7 +37,8 @@ const siteContent = {
   },
 };
 
-// Example: Update the img src for the logo
+//Images:
+
 let logo = document.getElementById("logo-img");
 logo.src=siteContent["nav"]["img-src"];
 
@@ -47,8 +48,39 @@ ctaImg.src=siteContent["cta"]["img-src"];
 let midImg = document.getElementById("middle-img");
 midImg.src=siteContent["main-content"]["middle-img-src"];
 
+//Nav:
+
+const mainNav = document.querySelector("nav");
 
 const navAnchors = document.querySelectorAll("a");
+
+navAnchors.forEach((index, i) => navAnchors[i].textContent = siteContent["nav"][`${Object.keys(siteContent["nav"])[i]}`]);
+
+const firstAnchor = document.createElement("a");
+firstAnchor.href = "#";
+firstAnchor.textContent = "Get Started";
+firstAnchor.style.color = "green";
+
+const lastAnchor = document.createElement("a");
+lastAnchor.href = "#";
+lastAnchor.textContent = "Blog";
+lastAnchor.style.color = "green";
+
+mainNav.prepend(firstAnchor);
+mainNav.appendChild(lastAnchor);
+
+navAnchors.forEach(navAnchor => navAnchor.style.color = "green");
+
+//CTA:
+
+const ctaHeader = document.querySelector("h1");
+ctaHeader.innerHTML = siteContent["cta"]["h1"].split(' ').join(`<br>`);
+
+const ctaButton = document.querySelector("button");
+ctaButton.textContent = siteContent["cta"]["button"];
+
+//Main Content:
+
 console.log(navAnchors);
 navAnchors[0].textContent = siteContent["nav"]["nav-item-1"];
 navAnchors[1].textContent = siteContent["nav"]["nav-item-2"];
