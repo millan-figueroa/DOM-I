@@ -57,7 +57,10 @@ navAnchors[3].textContent = siteContent["nav"]["nav-item-4"];
 navAnchors[4].textContent = siteContent["nav"]["nav-item-5"];
 navAnchors[5].textContent = siteContent["nav"]["nav-item-6"];
 
-navAnchors.style.color = "#b0b0b0";
+const navAnchors = Array.from(document.querySelectorAll("a"));
+for (let i=0; i<navAnchors.length; i++){
+  navAnchors[i].textContent=siteContent["nav"][`nav-item-${i+1}`];
+};
 
 const mainHeader = document.getElementsByTagName("h1");
 mainHeader.textContent = siteContent["cta"]["h1"];
