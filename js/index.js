@@ -81,21 +81,26 @@ ctaButton.textContent = siteContent["cta"]["button"];
 
 //Main Content:
 
-console.log(navAnchors);
-navAnchors[0].textContent = siteContent["nav"]["nav-item-1"];
-navAnchors[1].textContent = siteContent["nav"]["nav-item-2"];
-navAnchors[2].textContent = siteContent["nav"]["nav-item-3"];
-navAnchors[3].textContent = siteContent["nav"]["nav-item-4"];
-navAnchors[4].textContent = siteContent["nav"]["nav-item-5"];
-navAnchors[5].textContent = siteContent["nav"]["nav-item-6"];
+const contentHeaders = document.querySelectorAll("h4");
 
-const navAnchors = Array.from(document.querySelectorAll("a"));
-for (let i=0; i<navAnchors.length; i++){
-  navAnchors[i].textContent=siteContent["nav"][`nav-item-${i+1}`];
-};
+const mainH4Keys = Object.keys(siteContent["main-content"]).filter((key) => key.includes("h4"));
 
-const mainHeader = document.getElementsByTagName("h1");
-mainHeader.textContent = siteContent["cta"]["h1"];
-// mainHeader.style.color = "black";
+contentHeaders.forEach((index, i) => contentHeaders[i].textContent = siteContent["main-content"][`${mainH4Keys[i]}`]);
 
-console.log(mainHeader.textContent);
+
+const contentParas = document.querySelectorAll("p");
+
+const mainParaKeys = Object.keys(siteContent["main-content"]).filter((key) => key.includes("content"));
+
+contentParas.forEach((index, i) => contentParas[i].textContent = siteContent["main-content"][`${mainParaKeys[i]}`]);
+
+//Bottom Section:
+
+contentHeaders[5].textContent = siteContent["contact"]["contact-h4"];
+
+contentParas[5].innerHTML = siteContent["contact"]["address"].split('Street ').join(`Street <br>`);
+contentParas[6].textContent = siteContent["contact"]["phone"];
+contentParas[7].textContent = siteContent["contact"]["email"];
+
+contentParas[8].textContent = siteContent["footer"]["copyright"];
+
